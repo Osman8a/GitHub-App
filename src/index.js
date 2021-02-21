@@ -1,8 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
+firebase.initializeApp({
+  apiKey: 'AIzaSyBDbw_nROCHJQ_I8R1sV5lpr88isg13OWY',
+  authDomain: 'github-app-81cae.firebaseapp.com',
+  projectId: 'github-app-81cae',
+  storageBucket: 'github-app-81cae.appspot.com',
+  messagingSenderId: '179824244956',
+  appId: '1:179824244956:web:f778e33a9fe4ce8584dc19',
+  measurementId: 'G-NQCGPBGDT9',
+});
 
 ReactDOM.render(
   <React.StrictMode>
