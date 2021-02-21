@@ -1,11 +1,15 @@
 import React from 'react';
 import AuthState from './context/auth/authState';
+import RepoState from './context/repository/repoState';
 import Login from './components/Auth';
+import './App.sass';
 
 const App = () => {
   return (
     <AuthState>
-      <Login />
+      <RepoState>
+        <Login />
+      </RepoState>
     </AuthState>
   );
 };

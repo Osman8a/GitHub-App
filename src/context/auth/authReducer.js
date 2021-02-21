@@ -1,6 +1,6 @@
 import { SIGNIN_SUCCESS, SIGNUP } from '../../types';
 
-const add = (state, action) => {
+const authReducer = (state, action) => {
   switch (action.type) {
     case SIGNIN_SUCCESS: {
       return {
@@ -21,4 +21,4 @@ const add = (state, action) => {
   }
 };
 
-export default add;
+export default authReducer;

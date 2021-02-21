@@ -48,6 +48,7 @@ const AuthState = (props) => {
     <AuthContext.Provider
       value={{
         loggedIn: state.loggedIn,
+        user: state.user,
         signIn,
         signUp,
       }}
