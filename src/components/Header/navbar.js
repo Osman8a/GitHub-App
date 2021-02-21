@@ -4,7 +4,7 @@ import AuthContext from '../../context/auth/authContext';
 import logo from './logo.png';
 
 const Header = () => {
-  const { onSendText } = useContext(RepoContext);
+  const { onSearchRepo } = useContext(RepoContext);
   const { user } = useContext(AuthContext);
 
   //state local
@@ -22,7 +22,7 @@ const Header = () => {
 
   const handleSearchTerm = (e) => {
     e.preventDefault();
-    onSendText(term, user);
+    onSearchRepo(term, user);
   };
 
   return (

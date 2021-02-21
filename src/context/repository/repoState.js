@@ -2,20 +2,27 @@ import React, { useReducer } from 'react';
 import { github } from '../../api/github';
 import HeaderContext from './repoContext';
 import HeaderReducer from './repoReducer';
-import { INPUT_TEXT } from '../../types';
+import { GET_REPO } from '../../types';
 
 const RepoState = (props) => {
   const initialState = {
-    text: 'pepe',
+    dataRepo: [],
   };
 
   const [state, dispath] = useReducer(HeaderReducer, initialState);
 
-  const onSendText = async (search, user) => {
+  const onSearchRepo = async (search, user) => {
     try {
       const { accessToken = 0 } = user;
-      const result = await github(accessToken).get(`/users/${search}`);
-      console.log(result);
+      const result = await github(accessToken).get(`/orgs/${search}/repos`);
+      if (result.status === 200) {
+        dispath({
+          type: GET_REPO,
+          payload: {
+            dataRepo: result.data,
+          },
+        });
+      }
     } catch (error) {
       console.log(error);
     }
@@ -24,8 +31,9 @@ const RepoState = (props) => {
   return (
     <HeaderContext.Provider
       value={{
-        textt: state.text,
-        onSendText,
+        dataUser: state.dataUser,
+        dataRepo: state.dataRepo,
+        onSearchRepo,
       }}
     >
       {props.children}

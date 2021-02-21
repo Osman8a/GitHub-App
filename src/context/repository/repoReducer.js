@@ -1,11 +1,17 @@
-import { INPUT_TEXT } from '../../types';
+import { GET_REPO, GET_USER } from '../../types';
 
 const RepoReducer = (state, action) => {
   switch (action.type) {
-    case INPUT_TEXT: {
+    case GET_USER: {
       return {
         ...state,
-        text: action.payload,
+        dataUser: action.payload,
+      };
+    }
+    case GET_REPO: {
+      return {
+        ...state,
+        dataRepo: action.payload,
       };
     }
     default:
