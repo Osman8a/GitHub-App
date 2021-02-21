@@ -1,4 +1,4 @@
-import { SIGNIN_SUCCESS } from '../../types';
+import { SIGNIN_SUCCESS, SIGNUP } from '../../types';
 
 const add = (state, action) => {
   switch (action.type) {
@@ -7,6 +7,13 @@ const add = (state, action) => {
         ...state,
         user: action.payload,
         loggedIn: true,
+      };
+    }
+    case SIGNUP: {
+      return {
+        ...state,
+        user: {},
+        loggedIn: false,
       };
     }
     default:
