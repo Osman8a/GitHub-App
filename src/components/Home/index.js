@@ -1,15 +1,15 @@
-import React, { Fragment, useContext } from 'react';
-import AuthContext from '../../context/auth/authContext';
+import React, { Fragment } from 'react';
 import Header from '../../components/Header/navbar';
+import Card from '../../components/Card/card';
+import CardList from '../../components/CardList/cardList';
 
 const Home = () => {
-  const { signUp } = useContext(AuthContext);
   return (
     <Fragment>
-     <Header />
-     <button onClick={() => signUp()}>Logout</button>
-    </Fragment>
+      <Header />
 
+      <CardList />
+    </Fragment>
   );
 };
 
