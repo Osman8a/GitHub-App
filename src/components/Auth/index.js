@@ -7,28 +7,25 @@ import Home from '../Home';
 const Auth = () => {
   const { loggedIn, signIn } = useContext(AuthContext);
 
-  return ( 
-      loggedIn 
-      ? <Home /> 
-      
-      :  
-      (<main  className="container">
+  return loggedIn ? (
+    <Home />
+  ) : (
+    <main className="container">
       <section className="wrapper">
         <section className="wrapper-logo">
-            <img src={logo} alt="logo principal"/>
+          <img src={logo} alt="logo principal" />
         </section>
         <section className="signin">
-              <fieldset>
-              <h1>GitHub</h1>
-              <button type="submit" onClick={() => signIn()}>Sign in</button>
-              </fieldset>
+          <fieldset>
+            <h1>GitHub</h1>
+            <button type="submit" onClick={() => signIn()}>
+              Sign in
+            </button>
+          </fieldset>
         </section>
       </section>
-      </main>)
-
-
+    </main>
   );
-  
 };
 
 export default Auth;
