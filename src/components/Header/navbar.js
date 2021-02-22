@@ -13,7 +13,7 @@ import logo from '../../logo.png';
 
 const Header = () => {
   const { onSearchRepo } = useContext(RepoContext);
-  const { user } = useContext(AuthContext);
+  const { user, signUp } = useContext(AuthContext);
 
   //state local
   const [textValue, setTerm] = useState({
@@ -34,41 +34,26 @@ const Header = () => {
   };
 
   return (
-    <Fragment>
-      <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="#home">
-          <img
-            src={logo}
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-            alt="GitHub logo"
-          />
-        </Navbar.Brand>
-        <Nav className="mr-auto">
-          <Form inline>
-            <FormControl
-              type="text"
-              placeholder="Search"
-              className=" mr-sm-2"
-            />
-            <Button type="submit">Submit</Button>
-          </Form>
-          <Nav.Link href="#features">User</Nav.Link>
-          <Nav.Link href="#pricing">repositories</Nav.Link>
-        </Nav>
-        <img
-          src={user.photo}
-          width="30"
-          height="30"
-          className="d-inline-block align-top"
-          alt="GitHub logo"
-        />
-        <NavDropdown id="nav-dropdown">
-          <NavDropdown.Item eventKey="4.1">SingUp</NavDropdown.Item>
-        </NavDropdown>
-      </Navbar>
-    </Fragment>
+    <Navbar bg="dark" expand="lg" variant="dark">
+     
+    <Navbar.Brand href="#home"> <img src={logo} width="45" className="d-inline-block align-top" alt="GitHub logo"/></Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="mr-auto">
+        <Nav.Link href="#features">User</Nav.Link>
+        <Nav.Link href="#pricing">repositories</Nav.Link>
+        
+      </Nav>
+
+      <Nav>
+      <img style={{borderRadius: '50%'}} src={user.photo}  width="50"  className="d-inline-block align-top radiusImg" alt="img user"/>
+      <NavDropdown id="nav-dropdown">
+      <NavDropdown.Item eventKey="4.1"  onClick={() => signUp()}>SingUp</NavDropdown.Item>
+      </NavDropdown>
+      </Nav>
+      
+    </Navbar.Collapse>
+</Navbar>
   );
 };
 

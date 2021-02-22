@@ -7,7 +7,6 @@ const Home = () => {
   return (
     <Fragment>
      <Header />
-     <button onClick={() => signUp()}>Logout</button>
     </Fragment>
 
   );

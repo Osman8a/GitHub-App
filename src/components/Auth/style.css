@@ -6,6 +6,15 @@ main {
     height: 100vh;
 }
 
+
+
+@media only screen and (min-width: 900px) {
+    .signin fieldset {
+        width: 50%;
+        height: 60%;
+    }
+  }
+
 section.wrapper-logo {
     width: 100%;
     display: flex;
