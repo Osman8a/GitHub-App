@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import RepoContext from '../../context/repository/repoContext';
 import AuthContext from '../../context/auth/authContext';
-import logo from './logo.png';
+import logo from '../../logo.png';
 
 const Header = () => {
   const { onSearchRepo } = useContext(RepoContext);

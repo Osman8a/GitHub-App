@@ -1,0 +1,58 @@
+main {
+    background-color: #3F94E7;
+    font-family: "Roboto", helvetica, sans-serif;
+    padding-top: 60px;
+    width: 80%;
+    height: 100vh;
+}
+
+section.wrapper-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+img {
+    height: 45px;
+}
+
+fieldset {
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+.signin fieldset {
+    border: none;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+.signin fieldset h1 {
+    color: #565656;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 35px;
+}
+
+.signin button {
+    background-color: #65C470;
+    height: 55px;
+    width: 98%;
+    border: 2px solid #65C470;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 60px;
+}
+
+.signin button:hover {
+    background-color: green;
+}
