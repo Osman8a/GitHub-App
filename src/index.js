@@ -4,6 +4,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 firebase.initializeApp({
   apiKey: 'AIzaSyBDbw_nROCHJQ_I8R1sV5lpr88isg13OWY',
