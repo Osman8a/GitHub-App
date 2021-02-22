@@ -1,11 +1,11 @@
-import { GET_REPO } from '../../types';
+import { GET_USER } from '../../types';
 
 const RepoReducer = (state, action) => {
   switch (action.type) {
-    case GET_REPO: {
+    case GET_USER: {
       return {
         ...state,
-        dataRepo: action.payload,
+        dataUser: action.payload,
       };
     }
     default:

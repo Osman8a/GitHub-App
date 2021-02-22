@@ -1,6 +1,7 @@
 import React from 'react';
 import AuthState from './context/auth/authState';
 import RepoState from './context/repository/repoState';
+import UserState from './context/user/userState';
 import Login from './components/Auth';
 import './App.sass';
 
@@ -8,7 +9,9 @@ const App = () => {
   return (
     <AuthState>
       <RepoState>
-        <Login />
+        <UserState>
+          <Login />
+        </UserState>
       </RepoState>
     </AuthState>
   );

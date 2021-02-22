@@ -31,7 +31,6 @@ const RepoState = (props) => {
   return (
     <HeaderContext.Provider
       value={{
-        dataUser: state.dataUser,
         dataRepo: state.dataRepo,
         onSearchRepo,
       }}
