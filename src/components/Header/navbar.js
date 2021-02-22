@@ -1,7 +1,15 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, Fragment } from 'react';
 import RepoContext from '../../context/repository/repoContext';
 import AuthContext from '../../context/auth/authContext';
-import logo from './logo.png';
+import {
+  Navbar,
+  Nav,
+  Form,
+  FormControl,
+  Button,
+  NavDropdown,
+} from 'react-bootstrap';
+import logo from '../../logo.png';
 
 const Header = () => {
   const { onSearchRepo } = useContext(RepoContext);
@@ -26,52 +34,41 @@ const Header = () => {
   };
 
   return (
-    <nav className="navbar is-dark">
-      <div className="navbar-brand">
-        <a className="navbar-item" href="https://bulma.io">
-          <img src={logo} alt="" />
-          GitHub
-        </a>
-      </div>
-      <div className="navbar-item">
-        <form onSubmit={handleSearchTerm}>
-          <input
-            className="input is-small"
-            type="text"
-            placeholder="Small input"
-            name="term"
-            onChange={onChangeSendText}
-          ></input>
-          <button type="submit">search</button>
-        </form>
-      </div>
-
-      <div id="navbarBasicExample" className="navbar-menu">
-        <div className="navbar-start">
-          <a className="navbar-item" href="#">
-            users
-          </a>
-
-          <a className="navbar-item" href="#">
-            repositories
-          </a>
-        </div>
-        <div className="navbar-end">
-          <figure className="image is-48x48" style={{ padding: '2px' }}>
-            <img
-              src={user.photo}
-              alt=""
-              style={{
-                borderRadius: '150px',
-                width: '48px',
-                height: '48px',
-                border: '2px solid #666',
-              }}
+    <Fragment>
+      <Navbar bg="dark" variant="dark">
+        <Navbar.Brand href="#home">
+          <img
+            src={logo}
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+            alt="GitHub logo"
+          />
+        </Navbar.Brand>
+        <Nav className="mr-auto">
+          <Form inline>
+            <FormControl
+              type="text"
+              placeholder="Search"
+              className=" mr-sm-2"
             />
-          </figure>
-        </div>
-      </div>
-    </nav>
+            <Button type="submit">Submit</Button>
+          </Form>
+          <Nav.Link href="#features">User</Nav.Link>
+          <Nav.Link href="#pricing">repositories</Nav.Link>
+        </Nav>
+        <img
+          src={user.photo}
+          width="30"
+          height="30"
+          className="d-inline-block align-top"
+          alt="GitHub logo"
+        />
+        <NavDropdown id="nav-dropdown">
+          <NavDropdown.Item eventKey="4.1">SingUp</NavDropdown.Item>
+        </NavDropdown>
+      </Navbar>
+    </Fragment>
   );
 };
 

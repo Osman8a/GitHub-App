@@ -6,7 +6,7 @@ import Home from '../Home';
 const Auth = () => {
   const { loggedIn, signIn } = useContext(AuthContext);
 
-  return loggedIn ? <Home /> : <Button onClick={() => null}>Show Toast</Button>;
+  return loggedIn ? <Home /> : <Button onClick={() => signIn()}>signIn</Button>;
 };
 
 export default Auth;
