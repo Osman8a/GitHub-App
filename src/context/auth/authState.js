@@ -22,6 +22,7 @@ const AuthState = (props) => {
             name: result.user.displayName,
             email: result.user.emails,
             accessToken: result.credential.accessToken,
+            photo: result.user.photoURL,
           },
         });
       }

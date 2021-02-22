@@ -48,20 +48,27 @@ const Header = () => {
 
       <div id="navbarBasicExample" className="navbar-menu">
         <div className="navbar-start">
-          <a className="navbar-item">users</a>
+          <a className="navbar-item" href="#">
+            users
+          </a>
 
-          <a className="navbar-item">repositories</a>
+          <a className="navbar-item" href="#">
+            repositories
+          </a>
         </div>
-
         <div className="navbar-end">
-          <div className="navbar-item">
-            <div className="buttons">
-              <a className="button is-primary">
-                <strong>Sign up</strong>
-              </a>
-              <a className="button is-light">Log in</a>
-            </div>
-          </div>
+          <figure className="image is-48x48" style={{ padding: '2px' }}>
+            <img
+              src={user.photo}
+              alt=""
+              style={{
+                borderRadius: '150px',
+                width: '48px',
+                height: '48px',
+                border: '2px solid #666',
+              }}
+            />
+          </figure>
         </div>
       </div>
     </nav>
